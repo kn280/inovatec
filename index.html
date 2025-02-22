@@ -20,23 +20,51 @@
             background: #1E293B;
             color: white;
             padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         .logo h1 {
             margin: 0;
             font-size: 24px;
         }
+        /* Menu toggle button for mobile */
+        .menu-toggle {
+            display: none;
+            font-size: 30px;
+            color: #E5E7EB;
+            cursor: pointer;
+        }
         .nav-links {
             list-style: none;
             padding: 0;
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
         }
         .nav-links li {
             display: inline;
-            margin: 0 15px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #E5E7EB;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #38BDF8;
+            transition: background-color 0.3s;
+        }
+        .nav-links a:hover {
+            background-color: #0284c7;
         }
         .hero {
             background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
             color: white;
             padding: 100px 20px;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
         }
         .hero h2 {
             font-size: 32px;
@@ -61,13 +89,15 @@
             display: flex;
             justify-content: center;
             gap: 20px;
+            flex-wrap: wrap; /* Permite que os itens se ajustem em dispositivos menores */
         }
         .service-item {
             background: #1E293B;
             padding: 20px;
             border-radius: 5px;
             flex: 1;
-            min-width: 200px;
+            min-width: 250px;
+            max-width: 350px;
         }
         footer {
             background: #0F172A;
@@ -78,6 +108,37 @@
             color: #38BDF8;
             margin: 0 10px;
         }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background: #1E293B;
+                padding: 20px 0;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .nav-links li {
+                margin: 10px 0;
+            }
+            .nav-links a {
+                padding: 15px;
+                font-size: 18px;
+                text-align: center;
+            }
+            .hero h2 {
+                font-size: 24px; /* Ajuste no tamanho do texto para telas pequenas */
+            }
+        }
     </style>
 </head>
 <body>
@@ -85,21 +146,20 @@
         <div class="logo">
             <h1>INOVATEC</h1>
         </div>
+        <button class="menu-toggle"><i class="fas fa-bars"></i></button>
         <nav>
-            <button class="menu-toggle"><i class="fas fa-bars"></i></button>
             <ul class="nav-links">
                 <li><a href="#servicos">Serviços</a></li>
                 <li><a href="contato.html">Contato</a></li>
-                <li><a href="historia.html">História</a></li> <!-- Link para a história -->
+                <li><a href="historia.html">História</a></li>
             </ul>
         </nav>
     </header>
 
     <section class="hero">
         <h2>Transformamos suas ideias em soluções digitais</h2>
-        <!-- Botões para Fale Conosco e História -->
         <a href="contato.html" class="cta-button">Fale Conosco</a>
-        <a href="historia.html" class="history-button">Conheça nossa História</a> <!-- Novo botão -->
+        <a href="historia.html" class="history-button">Conheça nossa História</a>
     </section>
 
     <section id="servicos" class="services">
