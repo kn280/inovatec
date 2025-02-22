@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inovatec Soluções Web</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background: #0F172A;
+            color: #E5E7EB;
+        }
+        header {
+            background: #1E293B;
+            color: white;
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        /* Menu toggle button for mobile */
+        .menu-toggle {
+            display: none;
+            font-size: 30px;
+            color: #E5E7EB;
+            cursor: pointer;
+        }
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+            margin-right: 20px;
+        }
+        .nav-links li {
+            display: inline;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #E5E7EB;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #38BDF8;
+            transition: background-color 0.3s;
+        }
+        .nav-links a:hover {
+            background-color: #0284c7;
+        }
+        .hero {
+            background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+            color: white;
+            padding: 100px 20px;
+        }
+        .hero h2 {
+            font-size: 32px;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #38BDF8;
+            color: #0F172A;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .services {
+            padding: 50px 20px;
+        }
+        .service-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .service-item {
+            background: #1E293B;
+            padding: 20px;
+            border-radius: 5px;
+            flex: 1;
+            min-width: 200px;
+        }
+        .contact-form {
+            padding: 50px 20px;
+            background: #1E293B;
+            color: white;
+        }
+        footer {
+            background: #0F172A;
+            color: white;
+            padding: 20px 0;
+        }
+        .social-media a {
+            color: #38BDF8;
+            margin: 0 10px;
+        }
+
+        /* CSS for Mobile Menu */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background: #1E293B;
+                padding: 20px 0;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .nav-links li {
+                margin: 10px 0;
+            }
+            .nav-links a {
+                padding: 15px;
+                font-size: 18px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>INOVATEC</h1>
+        </div>
+        <!-- Menu Toggle Button for Mobile -->
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Transformamos suas ideias em soluções digitais</h2>
+        <a href="#contato" class="cta-button">Fale Conosco</a>
+    </section>
+
+    <section id="servicos" class="services">
+        <h2>Nossos Serviços</h2>
+        <div class="service-container">
+            <div class="service-item">
+                <h3>Design Responsivo</h3>
+            </div>
+            <div class="service-item">
+                <h3>Desenvolvimento Web</h3>
+            </div>
+            <div class="service-item">
+                <h3>Consultoria Tecnológica</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="contact-form">
+        <h2>Entre em Contato</h2>
+        <form>
+            <input type="text" placeholder="Nome" required>
+            <input type="email" placeholder="E-mail" required>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Inovatec Soluções Web</p>
+        <div class="social-media">
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/27998653080" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

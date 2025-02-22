@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inovatec Soluções Web</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background: #0F172A;
+            color: #E5E7EB;
+        }
+        header {
+            background: #1E293B;
+            color: white;
+            padding: 20px 0;
+        }
+        .logo h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .nav-links {
+            list-style: none;
+            padding: 0;
+        }
+        .nav-links li {
+            display: inline;
+            margin: 0 15px;
+        }
+        .hero {
+            background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+            color: white;
+            padding: 100px 20px;
+        }
+        .hero h2 {
+            font-size: 32px;
+        }
+        .cta-button, .history-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #38BDF8;
+            color: #0F172A;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .cta-button:hover, .history-button:hover {
+            background-color: #0284c7;
+        }
+        .services {
+            padding: 50px 20px;
+        }
+        .service-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .service-item {
+            background: #1E293B;
+            padding: 20px;
+            border-radius: 5px;
+            flex: 1;
+            min-width: 200px;
+        }
+        footer {
+            background: #0F172A;
+            color: white;
+            padding: 20px 0;
+        }
+        .social-media a {
+            color: #38BDF8;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>INOVATEC</h1>
+        </div>
+        <nav>
+            <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+            <ul class="nav-links">
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="historia.html">História</a></li> <!-- Link para a história -->
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Transformamos suas ideias em soluções digitais</h2>
+        <!-- Botões para Fale Conosco e História -->
+        <a href="contato.html" class="cta-button">Fale Conosco</a>
+        <a href="historia.html" class="history-button">Conheça nossa História</a> <!-- Novo botão -->
+    </section>
+
+    <section id="servicos" class="services">
+        <h2>Nossos Serviços</h2>
+        <div class="service-container">
+            <div class="service-item">
+                <h3>Design Responsivo</h3>
+            </div>
+            <div class="service-item">
+                <h3>Desenvolvimento Web</h3>
+            </div>
+            <div class="service-item">
+                <h3>Consultoria Tecnológica</h3>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Inovatec Soluções Web</p>
+        <div class="social-media">
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/27998653080" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
