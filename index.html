@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Inovatec oferece soluções digitais, desenvolvimento web, design responsivo e consultoria tecnológica. Transforme sua presença online!">
+    <meta name="keywords" content="Inovatec, soluções digitais, desenvolvimento web, consultoria tecnológica, design responsivo">
+    <meta name="author" content="Inovatec">
     <title>Inovatec Soluções Web</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -15,179 +19,312 @@
             text-align: center;
             background: #0F172A;
             color: #E5E7EB;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            scroll-behavior: smooth;
         }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
         header {
-            background: #1E293B;
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
             color: white;
-            padding: 20px 0;
+            padding: 15px 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            transition: background 0.3s, box-shadow 0.3s;
+            z-index: 1000;
         }
-        .logo h1 {
-            margin: 0;
+
+        .logo img {
+            width: 150px;
+        }
+
+        .menu-toggle {
+            background: none;
+            border: none;
+            color: white;
             font-size: 24px;
         }
-        /* Menu toggle button for mobile */
-        .menu-toggle {
-            display: none;
-            font-size: 30px;
-            color: #E5E7EB;
-            cursor: pointer;
-        }
-        .nav-links {
+
+        nav ul {
+            display: flex;
             list-style: none;
             padding: 0;
-            display: flex;
-            justify-content: flex-end;
-            gap: 15px;
         }
-        .nav-links li {
-            display: inline;
+
+        nav ul li {
+            margin: 0 15px;
         }
-        .nav-links a {
-            text-decoration: none;
-            color: #E5E7EB;
-            padding: 10px 20px;
-            border-radius: 5px;
-            background-color: #38BDF8;
-            transition: background-color 0.3s;
-        }
-        .nav-links a:hover {
-            background-color: #0284c7;
-        }
-        .hero {
-            background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+
+        nav ul li a {
             color: white;
-            padding: 100px 20px;
-            height: 100vh;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #38BDF8;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, rgba(15,23,42,0.8), rgba(30,41,59,0.9)), url('hero-bg.jpg') center/cover no-repeat;
+            color: white;
+            padding: 120px 20px;
+            height: 80vh;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
-        }
-        .hero h2 {
-            font-size: 32px;
-        }
-        .cta-button, .history-button {
-            display: inline-block;
-            padding: 10px 20px;
-            background: #38BDF8;
-            color: #0F172A;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-            font-weight: bold;
-        }
-        .cta-button:hover, .history-button:hover {
-            background-color: #0284c7;
-        }
-        .services {
-            padding: 50px 20px;
-        }
-        .service-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap; /* Permite que os itens se ajustem em dispositivos menores */
-        }
-        .service-item {
-            background: #1E293B;
-            padding: 20px;
-            border-radius: 5px;
-            flex: 1;
-            min-width: 250px;
-            max-width: 350px;
-        }
-        footer {
-            background: #0F172A;
-            color: white;
-            padding: 20px 0;
-        }
-        .social-media a {
-            color: #38BDF8;
-            margin: 0 10px;
+            position: relative;
         }
 
-        /* Mobile responsiveness */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                background: #1E293B;
-                padding: 20px 0;
+        .hero h2 {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                transform: translateY(20px);
+                opacity: 0;
             }
-            .nav-links.active {
-                display: flex;
-            }
-            .menu-toggle {
-                display: block;
-            }
-            .nav-links li {
-                margin: 10px 0;
-            }
-            .nav-links a {
-                padding: 15px;
-                font-size: 18px;
-                text-align: center;
-            }
-            .hero h2 {
-                font-size: 24px; /* Ajuste no tamanho do texto para telas pequenas */
+            100% {
+                transform: translateY(0);
+                opacity: 1;
             }
         }
+
+        .hero h2 span {
+            color: #38BDF8;
+        }
+
+        .cta-button {
+            padding: 12px 25px;
+            background: #38BDF8;
+            color: #0F172A;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(56, 191, 248, 0.7);
+        }
+
+        .cta-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(56, 191, 248, 1);
+        }
+
+        .service-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px;
+            background: #1E293B;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .service-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .service-item:hover {
+            transform: rotate(2deg) scale(1.05);
+            box-shadow: 0 4px 20px rgba(56, 191, 248, 0.3);
+        }
+
+        .service-item i {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .service-item h3 {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .testimonials {
+            padding: 60px 20px;
+            background: #1E293B;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-card {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+            padding: 20px;
+            background: #2d3a4b;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .testimonial-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .testimonial-card .client-photo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        footer {
+            background: #1E293B;
+            padding: 15px;
+            color: white;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+            font-size: 20px;
+            color: #E5E7EB;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #38BDF8;
+        }
+
+        @media (max-width: 768px) {
+            .service-container {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+
+            .hero h2 {
+                font-size: 28px;
+            }
+
+            .cta-button {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h2 {
+                font-size: 22px;
+            }
+            .cta-button {
+                font-size: 14px;
+            }
+        }
+
     </style>
 </head>
 <body>
     <header>
         <div class="logo">
-            <h1>INOVATEC</h1>
+            <img src="logo.png" alt="Inovatec">
         </div>
         <button class="menu-toggle"><i class="fas fa-bars"></i></button>
-        <nav>
+        <nav class="mobile-nav">
             <ul class="nav-links">
                 <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#testemunhos">Testemunhos</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
                 <li><a href="contato.html">Contato</a></li>
-                <li><a href="historia.html">História</a></li>
             </ul>
         </nav>
     </header>
-
+    
     <section class="hero">
-        <h2>Transformamos suas ideias em soluções digitais</h2>
+        <h2>Transformamos suas ideias em <span id="typed"></span></h2>
         <a href="contato.html" class="cta-button">Fale Conosco</a>
-        <a href="historia.html" class="history-button">Conheça nossa História</a>
     </section>
-
+    
     <section id="servicos" class="services">
         <h2>Nossos Serviços</h2>
         <div class="service-container">
             <div class="service-item">
-                <h3>Design Responsivo</h3>
-            </div>
-            <div class="service-item">
+                <i class="fas fa-laptop-code"></i>
                 <h3>Desenvolvimento Web</h3>
             </div>
             <div class="service-item">
+                <i class="fas fa-paint-brush"></i>
+                <h3>Design Responsivo</h3>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-lightbulb"></i>
                 <h3>Consultoria Tecnológica</h3>
             </div>
         </div>
     </section>
-
+    
+    <section id="testemunhos" class="testimonials">
+        <h2>O que nossos clientes dizem</h2>
+        <div class="testimonial-card">
+            <img src="client-photo.jpg" alt="Emanuelly" class="client-photo">
+            <p>"A Inovatec superou nossas expectativas!"</p>
+            <h4>Emanuelly - CEO</h4>
+        </div>
+    </section>
+    
     <footer>
         <p>&copy; 2025 Inovatec Soluções Web</p>
-        <div class="social-media">
-            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://wa.me/27998653080" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
         </div>
     </footer>
-
+    
     <script>
-        document.querySelector('.menu-toggle').addEventListener('click', () => {
-            document.querySelector('.nav-links').classList.toggle('active');
+        document.addEventListener("DOMContentLoaded", function() {
+            new Typed("#typed", {
+                strings: ["soluções digitais", "plataformas inovadoras", "experiências únicas", "transformação digital"],
+                typeSpeed: 50,
+                backSpeed: 50,
+                loop: true,
+                backDelay: 1500,
+                startDelay: 500,
+            });
+        });
+
+        window.addEventListener('scroll', function () {
+            const elements = document.querySelectorAll('.service-item, .testimonial-card');
+            elements.forEach((element) => {
+                const position = element.getBoundingClientRect().top;
+                if (position < window.innerHeight - 100) {
+                    element.classList.add('visible');
+                }
+            });
+        });
+
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.mobile-nav .nav-links');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
         });
     </script>
 </body>

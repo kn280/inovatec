@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projetos - Inovatec</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background: #0F172A;
+            color: #E5E7EB;
+        }
+
+        header {
+            background: rgba(30, 41, 59, 0.9);
+            padding: 15px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            padding: 120px 20px 60px;
+        }
+
+        .project-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .project-card {
+            background: #1E293B;
+            padding: 20px;
+            border-radius: 8px;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(56, 191, 248, 0.3);
+        }
+
+        .project-card img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        footer {
+            background: #0F172A;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Inovatec">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="container">
+        <h2>Nossos Projetos</h2>
+        <p>Confira alguns dos nossos trabalhos mais recentes.</p>
+        <div class="project-grid">
+            <div class="project-card">
+                <img src="projeto1.jpg" alt="Projeto 1">
+                <h3>Projeto Inovador</h3>
+                <p>Uma solução tecnológica que revolucionou o mercado.</p>
+            </div>
+            <div class="project-card">
+                <img src="projeto2.jpg" alt="Projeto 2">
+                <h3>Plataforma Digital</h3>
+                <p>Um sistema robusto e eficiente para empresas.</p>
+            </div>
+            <div class="project-card">
+                <img src="projeto3.jpg" alt="Projeto 3">
+                <h3>Aplicativo Mobile</h3>
+                <p>Facilitando o dia a dia dos usuários com tecnologia.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Inovatec Soluções Web</p>
+    </footer>
+</body>
+</html>
